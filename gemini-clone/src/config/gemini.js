@@ -1,6 +1,7 @@
+// filepath: c:\projects\Gemini-clone\gemini-clone\src\config\gemini.js
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: "AIzaSyBsKy14PcBHM8pnD2ClpcpMtlidKcMF-L4" });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
 
 async function main(prompt) {
   const response = await ai.models.generateContent({
